@@ -26,7 +26,7 @@ const INVITE_CONFIG = {
 
     // Date & time
     eventDate: "2026-11-15",     // YYYY-MM-DD
-    eventTime: "07:00 PM",       // HH:MM AM/PM
+    eventTime: "10:00 AM",       // HH:MM AM/PM
 
     // Photos — only 6 files needed for the whole site:
     //   1 couple photo (used for both the opening and closing scene)
