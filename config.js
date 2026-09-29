@@ -58,6 +58,7 @@ const INVITE_CONFIG = {
     // below are already generic. Add/remove entries freely.
     events: [
         { name: "Engagement", date: "2026-10-16", time: "", venue: "VINAY BANQUET HALL A/C" },
+        { name: "Prasthayam", date: "2026-10-25", time: "", venue: "Bapu Nagar Langar House" },
         { name: "Pasupu Muhurtham", date: "2026-11-11", time: "", venue: "" },
         { name: "Haldi", date: "2026-11-13", time: "", venue: "Sai Nature Farm Moinabad" },
         { name: "Mehndi", date: "2026-11-13", time: "", venue: "Sai Nature Farm Moinabad" },
