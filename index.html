@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=3a7e19a4-fd5b-4303-80e6-f4ec31cfde21
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FEFDFB">
+<title>You're Invited</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ambient particle layer (gold dust / petals / light rays — themed via data-style) -->
+<canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+<!-- ============================================================
+     GATE SCENE — The opening experience. First 3-5 seconds.
+     ============================================================ -->
+<div id="gate" class="gate">
+    <div class="gate-frame">
+        <div class="gate-corner tl"></div>
+        <div class="gate-corner tr"></div>
+        <div class="gate-corner bl"></div>
+        <div class="gate-corner br"></div>
+
+        <div class="gate-seal" aria-hidden="true"><span id="gateSealInitials">V&amp;A</span></div>
+
+        <p class="gate-eyebrow" id="gateEyebrow">The Wedding Of</p>
+
+        <h1 class="gate-names" id="gateNames">
+            <span id="gateNamesText"></span>
+        </h1>
+
+        <div class="gate-line"><span class="gate-line-fill"></span></div>
+
+        <p class="gate-date" id="gateDate">15 November 2026</p>
+
+        <button id="gateButton" class="gate-button" type="button">
+            <span id="gateButtonLabel">Open Invitation</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+        </button>
+    </div>
+    <div class="gate-glow"></div>
+</div>
+
+<!-- ============================================================
+     MAIN EXPERIENCE — Scene sequence, scroll-snap driven
+     ============================================================ -->
+<main id="experience" class="experience" aria-hidden="true">
+
+    <!-- subtle scene position indicator -->
+    <nav class="scene-nav" id="sceneNav" aria-label="Scene navigation"></nav>
+
+    <!-- thin gold progress thread — reflects position from ANY navigation
+         method (auto-progress, swipe, dots, manual scroll), doesn't drive anything -->
+    <div class="progress-thread" id="progressThread" aria-hidden="true">
+        <div class="progress-thread-fill" id="progressFill"></div>
+    </div>
+
+    <!-- floating music control (subtle, not a generic audio player) -->
+    <button id="musicToggle" class="music-control" aria-label="Toggle music" style="display:none;">
+        <span class="music-dot"></span>
+    </button>
+
+    <!-- appears only if the guest interacts once and then goes idle —
+         an explicit, visible, opt-in way to resume the guided experience.
+         Never appears/resumes automatically without this tap. -->
+    <button id="resumePill" class="resume-pill" type="button">Continue <span>▸</span></button>
+
+    <!-- SCENE: HERO -->
+    <section class="scene scene-hero" data-scene="hero" id="scene-hero">
+        <div class="hero-photo-wrap">
+            <img id="heroPhoto" class="hero-photo" src="" alt="" data-reveal="mask" data-parallax>
+            <div class="hero-photo-veil"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle" data-reveal="fade">Together with their families</p>
+            <h1 class="hero-names">
+                <span class="hero-name" id="heroBride" data-reveal="rise">Bride</span>
+                <span class="hero-amp" data-reveal="scale">&amp;</span>
+                <span class="hero-name" id="heroGroom" data-reveal="rise">Groom</span>
+            </h1>
+            <p class="hero-date" id="heroDate" data-reveal="fade">November 15, 2026</p>
+        </div>
+        <div class="scroll-hint" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- SCENE: INVITATION -->
+    <section class="scene scene-invitation" data-scene="invitation" id="scene-invitation">
+        <div class="stationery" data-reveal="crossfade">
+            <p class="stationery-kicker">You're Invited</p>
+            <div class="stationery-rule"></div>
+            <div id="invitationText" class="stationery-text"></div>
+            <div class="stationery-rule"></div>
+        </div>
+    </section>
+
+    <!-- SCENE: COUNTDOWN -->
+    <section class="scene scene-countdown" data-scene="countdown" id="scene-countdown">
+        <p class="scene-kicker" data-reveal="fade">Counting Down</p>
+        <div class="countdown-grid">
+            <div class="countdown-unit" data-reveal="rise">
+                <span class="countdown-number" id="cdDays">00</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-unit" data-reveal="rise">
+                <span class="countdown-number" id="cdHours">00</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-unit" data-reveal="rise">
+                <span class="countdown-number" id="cdMinutes">00</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-unit" data-reveal="rise">
+                <span class="countdown-number" id="cdSeconds">00</span>
+                <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENE: EVENTS -->
+    <section class="scene scene-events" data-scene="events" id="scene-events">
+        <p class="scene-kicker" data-reveal="fade">The Celebrations</p>
+        <div id="eventsTimeline" class="events-timeline"></div>
+    </section>
+
+    <!-- SCENE: STORY (optional) -->
+    <section class="scene scene-story" data-scene="story" id="scene-story" style="display:none;">
+        <p class="scene-kicker" data-reveal="fade" id="storyTitle">Our Story</p>
+        <p class="story-intro" id="storyIntro" data-reveal="fade"></p>
+        <div id="storyMilestones" class="story-milestones"></div>
+        <p class="story-closing" id="storyClosing" data-reveal="fade"></p>
+    </section>
+
+    <!-- SCENE: VENUE -->
+    <section class="scene scene-venue" data-scene="venue" id="scene-venue">
+        <div class="venue-photo-wrap" data-reveal="mask">
+            <img id="venuePhoto" class="venue-photo" src="" alt="" data-parallax>
+        </div>
+        <div class="venue-info" data-reveal="fade">
+            <p class="scene-kicker">The Venue</p>
+            <h2 class="venue-name" id="venueName">The Grand Venue</h2>
+            <p class="venue-address" id="venueAddress"></p>
+            <a id="venueDirections" class="venue-button" href="#" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+        <div class="venue-map-frame" data-reveal="fade">
+            <iframe id="venueMapFrame" width="100%" height="220" frameborder="0" style="border:0" loading="lazy" title="Venue location map"></iframe>
+        </div>
+    </section>
+
+    <!-- SCENE: GALLERY -->
+    <section class="scene scene-gallery" data-scene="gallery" id="scene-gallery">
+        <p class="scene-kicker" data-reveal="fade">Moments We Cherish</p>
+        <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+
+    <!-- SCENE: FINAL -->
+    <section class="scene scene-final" data-scene="final" id="scene-final">
+        <img id="finalPhoto" class="final-photo" src="" alt="" data-reveal="zoom" data-parallax>
+        <div class="final-veil"></div>
+        <div class="final-content" data-reveal="fade">
+            <p class="final-names" id="finalNames">Vaishnavi &amp; Abhishek</p>
+            <p class="final-message" id="finalMessage">We can't wait to celebrate with you.</p>
+            <p class="final-date" id="finalDate"></p>
+            <div class="final-mark">&#10022;</div>
+        </div>
+    </section>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" style="display:none;">
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M5 5l14 14M19 5L5 19"/>
+        </svg>
+    </button>
+    <img id="lightboxImage" src="" alt="" class="lightbox-image">
+    <button id="lightboxPrev" class="lightbox-nav prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M15 5l-7 7 7 7"/>
+        </svg>
+    </button>
+    <button id="lightboxNext" class="lightbox-nav next" aria-label="Next">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M9 5l7 7-7 7"/>
+        </svg>
+    </button>
+</div>
+
+<audio id="audioElement" loop preload="none"></audio>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
