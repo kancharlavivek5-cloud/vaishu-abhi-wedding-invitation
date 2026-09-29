@@ -25,7 +25,7 @@ const INVITE_CONFIG = {
     brideName: "Vaishnavi",
 
     // Date & time
-    eventDate: "2026-11-15",     // YYYY-MM-DD
+    eventDate: "2026/11/15",     // YYYY-MM-DD
     eventTime: "10:00 AM",       // HH:MM AM/PM
 
     // Photos — only 6 files needed for the whole site:
