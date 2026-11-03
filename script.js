@@ -191,9 +191,6 @@ function getEventMapUrl(venue) {
     } else if (/a g s convention/i.test(venue)) {
         query = 'A G S Convention Chevella Telangana';
     } else if (/bapu nagar/i.test(venue)) {
-        query = 'Bapu Nagar Langar House Hyderabad';
-    }
-
     return 'https://www.google.com/maps/search/?api=1&query='
         + encodeURIComponent(query);
 }
