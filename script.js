@@ -182,9 +182,26 @@ function hideScene(id) {
    EVENTS TIMELINE
    ============================================================ */
 
+
+function getEventMapUrl(venue) {
+    let query = venue || '';
+
+    if (/sai nature farm/i.test(venue)) {
+        query = 'Sai Nature Farm Kanakamamidi';
+    } else if (/a g s convention/i.test(venue)) {
+        query = 'A G S Convention Chevella Telangana';
+    } else if (/bapu nagar/i.test(venue)) {
+        query = 'Bapu Nagar Langar House Hyderabad';
+    }
+
+    return 'https://www.google.com/maps/search/?api=1&query='
+        + encodeURIComponent(query);
+}
+
 function populateEvents(events) {
     const container = document.getElementById('eventsTimeline');
     if (!container) return;
+
     container.innerHTML = '';
 
     events.forEach((event, index) => {
@@ -194,25 +211,56 @@ function populateEvents(events) {
         item.style.setProperty('--delay', (index * 90) + 'ms');
 
         const eventDate = new Date(event.date);
-        const formatted = eventDate.getDate() + ' ' + MONTH_NAMES[eventDate.getMonth()];
+        const formatted =
+            eventDate.getDate() + ' ' +
+            MONTH_NAMES[eventDate.getMonth()];
+
+        const venue = event.venue || '';
+        const mapUrl = getEventMapUrl(venue);
 
         item.innerHTML = `
-            <h3 class="event-name">${escapeHtml(event.name)}</h3>
-            <p class="event-meta">${formatted} &middot; ${escapeHtml(event.time || '')}</p>
-            <p class="event-venue">${escapeHtml(event.venue || '')}</p>
-            ${event.description ? `<p class="event-desc">${escapeHtml(event.description)}</p>` : ''}
+            <h3 class="event-name">
+                ${escapeHtml(event.name)}
+            </h3>
+
+            <p class="event-meta">
+                ${formatted} &middot;
+                ${escapeHtml(event.time || '')}
+            </p>
+
+            ${venue ? `
+                <a class="event-venue event-venue-link"
+                   href="${mapUrl}"
+                   target="_blank"
+                   rel="noopener">
+                    ${escapeHtml(venue)}
+                    &nbsp; ↗
+                </a>
+            ` : ''}
+
+            ${event.description ? `
+                <p class="event-desc">
+                    ${escapeHtml(event.description)}
+                </p>
+            ` : ''}
         `;
+
         container.appendChild(item);
 
         if (index < events.length - 1) {
             const divider = document.createElement('div');
             divider.className = 'event-divider';
             divider.setAttribute('data-reveal', 'fade');
-            divider.innerHTML = `<svg width="60" height="20" viewBox="0 0 60 20"><path d="M0 10 Q30 -5 60 10"/></svg>`;
+            divider.innerHTML = `
+                <svg width="60" height="20" viewBox="0 0 60 20">
+                    <path d="M0 10 Q30 -5 60 10"/>
+                </svg>
+            `;
             container.appendChild(divider);
         }
     });
 }
+
 
 /* ============================================================
    STORY MILESTONES
