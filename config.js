@@ -51,8 +51,7 @@ const INVITE_CONFIG = {
         name: "Sai Nature Farm Moinabad",
         address: "Kanakamamidi , Moinabad",
         mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.181415641421!2d78.15969679999999!3d17.3067939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbc3000dda2f35%3A0x54ef1fb201efb83f!2sA%20G%20S%20CONVENTION!5e0!3m2!1sen!2sin!4v1790521082001!5m2!1sen!2sin"
-    },
-           {
+    },{
         name: "A G S CONVENTION",
         address: "Chevella, Telangana, India 501503",
         mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.181415641421!2d78.15969679999999!3d17.3067939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbc3000dda2f35%3A0x54ef1fb201efb83f!2sA%20G%20S%20CONVENTION!5e0!3m2!1sen!2sin!4v1790521082001!5m2!1sen!2sin"
