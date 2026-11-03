@@ -60,6 +60,7 @@ const INVITE_CONFIG = {
         { name: "Engagement", date: "2026-10-16", time: "11:00 am", venue: "Vinay Banquet Hall A/C" },
        { name: "Prasthayam", date: "2026-10-25", time: "", venue: "Bapu Nagar, Langar House" },
         { name: "Pasupu Muhurtham", date: "2026-11-11", time: "08:00 am", venue: "Bapu Nagar, Langar House" },
+        { name: "Deepala Pellikuthuru", date: "2026-11-11", time: "Afternoon", venue: "Bapu Nagar, Langar house" },
         { name: "Mehandi", date: "2026-11-13", time: "Morning", venue: "Sai Nature Farm Moinabad" },
         { name: "Haldi", date: "2026-11-13", time: "Evening", venue: "Sai Nature Farm Moinabad" },
         { name: "Pochamma Naagulu", date: "2026-11-14", time: "Morning", venue: "Sai Nature Farm Moinabad" },
