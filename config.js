@@ -64,7 +64,7 @@ const INVITE_CONFIG = {
         { name: "Haldi", date: "2026-11-13", time: "Evening", venue: "Sai Nature Farm Moinabad" },
         { name: "Pochamma Naagulu", date: "2026-11-14", time: "Morning", venue: "Sai Nature Farm Moinabad" },
         { name: "Kotnam", date: "2026-11-14", time: "Afternoon", venue: "Sai Nature Farm Moinabad" },
-        { name: "Wedding", date: "2026-11-15", time: "", venue: "A G S CONVENTION" },
+        { name: "Wedding", date: "2026-11-15", time: "09:58 AM", venue: "A G S CONVENTION" },
         { name: "Reception", date: "2026-11-17", time: "", venue: "BADDAM MANIKREDDY HALL" }
     ],
 
