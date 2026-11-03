@@ -26,7 +26,7 @@ const INVITE_CONFIG = {
 
     // Date & time
     eventDate: "2026/11/15",     // YYYY-MM-DD
-    eventTime: "10:00 AM",       // HH:MM AM/PM
+    eventTime: "09:58 AM",       // HH:MM AM/PM
 
     // Photos — only 6 files needed for the whole site:
     //   1 couple photo (used for both the opening and closing scene)
@@ -57,13 +57,12 @@ const INVITE_CONFIG = {
     // client-specific; the event titles + one-line descriptions
     // below are already generic. Add/remove entries freely.
     events: [
-        { name: "Engagement", date: "2026-10-16", time: "", venue: "VINAY BANQUET HALL A/C" },
-        { name: "Prasthayam", date: "2026-10-25", time: "", venue: "Bapu Nagar, Langar House" },
-        { name: "Pasupu Muhurtham", date: "2026-11-11", time: "", venue: "Bapu Nagar, Langar House" },
-        { name: "Haldi", date: "2026-11-13", time: "", venue: "Sai Nature Farm Moinabad" },
-        { name: "Mehandi", date: "2026-11-13", time: "", venue: "Sai Nature Farm Moinabad" },
-        { name: "Pochamma Naagulu", date: "2026-11-14", time: "", venue: "Sai Nature Farm Moinabad" },
-        { name: "Kotnam", date: "2026-11-14", time: "", venue: "Sai Nature Farm Moinabad" },
+       { name: "Prasthayam", date: "2026-10-25", time: "", venue: "Bapu Nagar, Langar House" },
+        { name: "Pasupu Muhurtham", date: "2026-11-11", time: "08:00 am", venue: "Bapu Nagar, Langar House" },
+        { name: "Mehandi", date: "2026-11-13", time: "Morning", venue: "Sai Nature Farm Moinabad" },
+        { name: "Haldi", date: "2026-11-13", time: "Evening", venue: "Sai Nature Farm Moinabad" },
+        { name: "Pochamma Naagulu", date: "2026-11-14", time: "Morning", venue: "Sai Nature Farm Moinabad" },
+        { name: "Kotnam", date: "2026-11-14", time: "Afternoon", venue: "Sai Nature Farm Moinabad" },
         { name: "Wedding", date: "2026-11-15", time: "", venue: "A G S CONVENTION" },
         { name: "Reception", date: "2026-11-17", time: "", venue: "BADDAM MANIKREDDY HALL" }
     ],
