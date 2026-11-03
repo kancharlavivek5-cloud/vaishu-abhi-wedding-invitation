@@ -57,6 +57,7 @@ const INVITE_CONFIG = {
     // client-specific; the event titles + one-line descriptions
     // below are already generic. Add/remove entries freely.
     events: [
+        { name: "Engagement", date: "2026-10-16", time: "11:00 am", venue: "Vinay Banquet Hall A/C" },
        { name: "Prasthayam", date: "2026-10-25", time: "", venue: "Bapu Nagar, Langar House" },
         { name: "Pasupu Muhurtham", date: "2026-11-11", time: "08:00 am", venue: "Bapu Nagar, Langar House" },
         { name: "Mehandi", date: "2026-11-13", time: "Morning", venue: "Sai Nature Farm Moinabad" },
