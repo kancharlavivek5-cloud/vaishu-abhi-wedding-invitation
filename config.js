@@ -52,21 +52,18 @@ const INVITE_CONFIG = {
         address: "Chevella, Telangana, India 501503",
         mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.181415641421!2d78.15969679999999!3d17.3067939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbc3000dda2f35%3A0x54ef1fb201efb83f!2sA%20G%20S%20CONVENTION!5e0!3m2!1sen!2sin!4v1790521082001!5m2!1sen!2sin"
     },
-       venue: {
-        name: "A G S CONVENTION",
-        address: "Chevella, Telangana, India 501503",
-        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.181415641421!2d78.15969679999999!3d17.3067939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbc3000dda2f35%3A0x54ef1fb201efb83f!2sA%20G%20S%20CONVENTION!5e0!3m2!1sen!2sin!4v1790521082001!5m2!1sen!2sin"
-    },
     // Ceremony schedule — only the dates/times/venue names are
     // client-specific; the event titles + one-line descriptions
     // below are already generic. Add/remove entries freely.
     events: [
+
         { name: "Deepala Pellikuthuru", date: "2026-11-11", time: "Afternoon", venue: "Bapu Nagar, Langar house" },
         { name: "Mehandi", date: "2026-11-13", time: "Morning", venue: "Sai Nature Farm Kanakamamidi" },
         { name: "Haldi", date: "2026-11-13", time: "Evening", venue: "Sai Nature Farm Kanakamamidi" },
         { name: "Pochamma Naagulu", date: "2026-11-14", time: "Morning", venue: "Sai Nature Farm Kanakamamidi" },
         { name: "Kotnam", date: "2026-11-14", time: "Afternoon", venue: "Sai Nature Farm Kanakamamidi" },
         { name: "Wedding", date: "2026-11-15", time: "09:58 AM", venue: "A G S CONVENTION" },
+
        
     // Visual style — a business choice, not text. Pick whichever
     // mood fits the client; the copy below never needs to change.
