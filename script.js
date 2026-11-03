@@ -183,6 +183,8 @@ function hideScene(id) {
    ============================================================ */
 
 
+
+
 function getEventMapUrl(venue) {
     let query = venue || '';
 
@@ -191,10 +193,12 @@ function getEventMapUrl(venue) {
     } else if (/a g s convention/i.test(venue)) {
         query = 'A G S Convention Chevella Telangana';
     } else if (/bapu nagar/i.test(venue)) {
+        return 'https://maps.app.goo.gl/YYAuQxYUujjrcrJYA';
+    }
+
     return 'https://www.google.com/maps/search/?api=1&query='
         + encodeURIComponent(query);
 }
-
 function populateEvents(events) {
     const container = document.getElementById('eventsTimeline');
     if (!container) return;
